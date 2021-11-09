@@ -28,8 +28,8 @@
     font-size:25px;
     font-weight:bold;
     text-align:center;
-    color:#45bda6;
-    text-shadow:0 0 1px #0e947a;
+    color:#4500a6;
+    text-shadow:0 0 1px #0e007a;
     margin-bottom:0px;
 }
 .login{
@@ -43,4 +43,10 @@
     background:#FF5722;
     color:#f8f8f8;
     cursor: pointer;
+}
+.main
+{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
 }
