@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>第一个 ECharts 实例</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+ 
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                show:true, //显示策略，默认值true,可选为：true（显示） | false（隐藏）
+                text: '喇叭正露丸100粒\n', 
+                x:'center' ,//水平安放位置，默认为'left'，可选为：'center' | 'left' | 'right' | {number}（x坐标，单位px）
+                y: 'bottom', 
+                padding: 0,
+                textStyle: { //主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+                    fontSize: 18,
+                },
+            },
+            legend: {},
+            tooltip: {},
+            dataset: {
+                // 提供一份数据。
+                
+                source: [
+                    ['sorge', '阿里大药房', '京东大药房', '学生街A店','学生街B店','饿了么某店'],
+                    ['10月20日', 35.5,45,55,52,53.5],
+                    ['11月1日',46.5,46.5,55,52,39.8],
+                    ['11月11日',46.5,35.5,55,52,39.8]
+                    // ['Milk Tea', 83.1, 73.4, 55.1],
+                    // ['Cheese Cocoa', 86.4, 65.2, 82.5],
+                    // ['Walnut Brownie', 72.4, 53.9, 39.1]
+                ]
+            },
+            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+            xAxis: {type: 'category'},
+            // 声明一个 Y 轴，数值轴。
+            yAxis: {},
+            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+            series: [
+                {type: 'bar'},
+                {type: 'bar'},
+                {type: 'bar'},
+                {type: 'bar'},
+                {type: 'bar'}
+            ]
+        };
+ 
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
